@@ -34,6 +34,25 @@ services:
       entrypoint: ["./start-lnd.sh"]
       links:
         - "bitcoind:blockchain"
+      # ports:
+      #   - "10009:10009"
+      #   - "9735:9735"
+
+    tapd:
+      image: tapd
+      container_name: tapd
+      build:
+        context: tapd/
+      environment:
+        - NETWORK
+      volumes:
+        - tapd:/root/.tapd
+      entrypoint: ["./start-tapd.sh"]
+      links:
+        - "lnd:de8f24577b07"
+      ports:
+        - "10029:10029"
+        - "8089:8089"
 
 volumes:
   # bitcoin volume is needed for maintaining blockchain persistence
@@ -44,4 +63,7 @@ volumes:
   # lnd volume is used for persisting lnd application data and chain state
   # during container lifecycle.
   lnd:
+    driver: local
+
+  tapd:
     driver: local
