@@ -47,7 +47,7 @@ set_default() {
 DEFAULT_PASSWORD='22d3dd348a42d7f040487887b0ea6cc7$79ce831819539c78537884f85b65a09e15b079d79eb8f99447ea9b0a58fa66a6'
 
 RPCAUTH=$(set_default "$RPCAUTH" "devuser:$DEFAULT_PASSWORD")
-NETWORK=$(set_default "$NETWORK" "regtest")
+NETWORK=$(set_default "$NETWORK" "testnet")
 DEBUG=$(set_default "$BITCOIND_DEBUG" "1")
 
 PARAMS=""

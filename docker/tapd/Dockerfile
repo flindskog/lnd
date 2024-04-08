@@ -26,7 +26,7 @@ FROM alpine as final
 # Define a root volume for data persistence.
 #VOLUME /root/.tapd
 
-# Add utilities for quality of life and SSL-related reasons. We also require
+# Add utilities for quality of lifnete and SSL-related reasons. We also require
 # curl and gpg for the signature verification script.
 RUN apk --no-cache add \
     bash \

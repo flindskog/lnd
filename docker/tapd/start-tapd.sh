@@ -39,8 +39,8 @@ set_default() {
 }
 
 # Set default variables if needed.
-NETWORK=$(set_default "$NETWORK" "$DEFAULT_NETWORK")
-LNDHOST=$(set_default "$LNDHOST" "de8f24577b07")
+NETWORK=$(set_default "$NETWORK" "testnet")
+LNDHOST=$(set_default "$LNDHOST" "32f39c5ad7e7")
 MACAROONPATH=$(set_default "$MACAROONPATH" "/root/.lnd/admin.macaroon")
 TLSPATH=$(set_default "$TLSPATH" "/root/.lnd/tls.cert")
 DEBUG=$(set_default "$TAPD_DEBUG" "debug")
@@ -54,6 +54,5 @@ exec tapd \
   "--lnd.tlspath=$TLSPATH" \
   "--rpclisten=$HOSTNAME:10029" \
   "--rpclisten=127.0.0.1:10029" \
-  "--restlisten=$HOSTNAME:8089" \
-  "$@"
+  "--restlisten=$HOSTNAME:8089"
 

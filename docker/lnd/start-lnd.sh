@@ -40,7 +40,7 @@ set_default() {
 
 
 # Set the default network and default RPC path (if any).
-DEFAULT_NETWORK="regtest"
+DEFAULT_NETWORK="testnet"
 if [ "$BACKEND" == "btcd" ]; then
     DEFAULT_NETWORK="simnet"
     DEFAULT_RPCCRTPATH="/rpc/rpc.cert"
